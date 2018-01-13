@@ -4,7 +4,6 @@
 #include "rtimer.h"
 #include "ti-lib.h"
 #include <string.h>
-#include <stdio.h>
 
 /** This implementation uses the primitives offered by Contiki.
  * In this way, sharing the code between the two implementations
@@ -121,15 +120,12 @@ ATCA_STATUS hal_i2c_wake( ATCAIface iface) {
     board_i2c_deselect();
 
     if (status != true) {
-        printf("The read was not successfull\n");
         return ATCA_TOO_MANY_COMM_RETRIES;
     }
 
     if (memcmp(data, expected, 4) == 0) {
-        printf("Wake up successfull\n");
         return ATCA_SUCCESS;
     }
-    printf("The received data was not correct\n");
     return ATCA_COMM_FAIL;
 }
 
@@ -146,7 +142,6 @@ static ATCA_STATUS send_single(ATCAIface iface, uint8_t single) {
  */
 ATCA_STATUS hal_i2c_idle( ATCAIface iface )
 {
-    printf("send idle\n");
     return send_single(iface, 0x02);
 }
 
@@ -155,7 +150,6 @@ ATCA_STATUS hal_i2c_idle( ATCAIface iface )
  */
 ATCA_STATUS hal_i2c_sleep( ATCAIface iface )
 {
-    printf("send sleep\n");
     return send_single(iface, 0x01);
 }
 
