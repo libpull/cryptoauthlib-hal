@@ -103,7 +103,7 @@ ATCA_STATUS hal_i2c_wake( ATCAIface iface) {
     ATCAIfaceCfg *cfg = atgetifacecfg(iface);
     int retries = cfg->rx_retries;
     bool status = false;
-    uint8_t data[16], expected[4] = { 0x04, 0x11, 0x33, 0x43 };
+    uint8_t data[4], expected[4] = { 0x04, 0x11, 0x33, 0x43 };
 
     /* Send the wake up sequence using the GPIO interface for tWLO */
     ti_lib_i2c_master_disable(I2C0_BASE);
