@@ -14,3 +14,6 @@ This implementation has been tested with a
 [ATECC508A](https://www.microchip.com/wwwproducts/en/ATECC508A),
 and the [ATSHA204A](https://www.microchip.com/wwwproducts/en/ATSHA204A)
 connected via the i2c bus.
+
+You can find some examples on how to use this HAL in [this](https://github.com/pull-iot/contiki-cryptoauthlib)
+repository.
