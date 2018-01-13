@@ -9,4 +9,8 @@ implemenation provided by Texas Instruments and another using the
 the Contiki primitives reduces the size of the HAL when used with a
 Contiki image.
 
-It has been tested with a [TI Sensortag CC2650](http://www.ti.com/tool/cc2650stk).
+This implementation has been tested with a 
+[TI Sensortag CC2650](http://www.ti.com/tool/cc2650stk), the
+[ATECC508A](https://www.microchip.com/wwwproducts/en/ATECC508A),
+and the [ATSHA204A](https://www.microchip.com/wwwproducts/en/ATSHA204A)
+connected via the i2c bus.
