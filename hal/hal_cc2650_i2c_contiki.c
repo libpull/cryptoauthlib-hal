@@ -1,5 +1,5 @@
 #include "atca_hal.h"
-#include "hal_cc2650_i2c.h"
+#include "hal_cc2650_i2c_contiki.h"
 #include "board-i2c.h"
 #include "rtimer.h"
 #include "ti-lib.h"
