@@ -1,6 +1,6 @@
 # CryptoAuthLib
 
-This repository contains the CryptoAuthLib HAL implementation for CC2650.
+This repository contains a [CryptoAuthLib](https://github.com/MicrochipTech/cryptoauthlib/tree/b31ed52daf2260329a131da19f8cc40a4d32d150) HAL implementation for CC2650.
 
 In the `hal` folder you will find two implementations, one direcly based
 on the [cc26xxware](http://processors.wiki.ti.com/index.php/CC26xxware)
