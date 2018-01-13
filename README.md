@@ -1,4 +1,4 @@
-# CryptoAuthLib
+# CryptoAuthLib HAL
 
 This repository contains a [CryptoAuthLib](https://github.com/MicrochipTech/cryptoauthlib/tree/b31ed52daf2260329a131da19f8cc40a4d32d150) HAL implementation for CC2650.
 
@@ -15,5 +15,5 @@ This implementation has been tested with a
 and the [ATSHA204A](https://www.microchip.com/wwwproducts/en/ATSHA204A)
 connected via the i2c bus.
 
-You can find some examples on how to use this HAL in [this](https://github.com/pull-iot/contiki-cryptoauthlib)
+You can find some examples on how to use this HAL in [this](https://github.com/pull-iot/cryptoauthlib-contiki-examples)
 repository.
