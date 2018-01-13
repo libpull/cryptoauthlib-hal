@@ -81,10 +81,22 @@ ATCA_STATUS hal_i2c_send( ATCAIface iface, uint8_t* txdata, int txlength)
 ATCA_STATUS hal_i2c_receive( ATCAIface iface, uint8_t *rxdata, uint16_t *rxlength )
 {
     const ATCAIfaceCfg *cfg = atgetifacecfg(iface);
+    int retries = cfg->rx_retries;
+    bool success = false;
     board_i2c_select(DEFAULT_I2C_INTERFACE, cfg->atcai2c.slave_address >> 1);
-    bool success = board_i2c_read(rxdata, *rxlength);
+    while (retries-- > 0 && !success) {
+        // Wait 5 ms between one read and the other
+        atca_delay_ms(5);
+        success = board_i2c_read(rxdata, *rxlength);
+    }
     board_i2c_deselect();
-    return success? ATCA_SUCCESS: ATCA_COMM_FAIL;
+    if (!success) {
+        return ATCA_COMM_FAIL;
+    }
+    if (atCheckCrc(rxdata) != ATCA_SUCCESS) {
+        return ATCA_COMM_FAIL;
+    }
+    return ATCA_SUCCESS;
 }
 
 ATCA_STATUS hal_i2c_wake( ATCAIface iface) {

@@ -1,6 +1,5 @@
 #include "atca_hal.h"
 #include "rtimer.h"
-#include <stdio.h>
 
 /** \defgroup hal_ Hardware abstraction layer (hal_)
  *
